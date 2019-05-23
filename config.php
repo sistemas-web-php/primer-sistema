@@ -8,8 +8,8 @@ define("DB", "bolsa_de_trabajo");
 
 //constantes de rutas
 
-define("RAIZ", $_SERVER['DOCUMENT_ROOT'] . "/bolsa_de_trabajo/");
-define("CONTROLADOR", $_SERVER['DOCUMENT_ROOT'] . "/bolsa_de_trabajo/controlador/");
-define("MODELO", $_SERVER['DOCUMENT_ROOT'] . "/bolsa_de_trabajo/modelo/");
-define("VISTA", $_SERVER['DOCUMENT_ROOT'] . "/bolsa_de_trabajo/vista/");
-define("WEB", "localhost/bolsa_de_trabajo");
+define("RAIZ", $_SERVER['DOCUMENT_ROOT'] . "/primer-sistema/");
+define("CONTROLADOR", $_SERVER['DOCUMENT_ROOT'] . "/primer-sistema/controlador/");
+define("MODELO", $_SERVER['DOCUMENT_ROOT'] . "/primer-sistema/modelo/");
+define("VISTA", $_SERVER['DOCUMENT_ROOT'] . "/primer-sistema/vista/");
+define("WEB", "/primer-sistema");
