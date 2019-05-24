@@ -103,6 +103,7 @@ class operador
 
                 $resultado = mysqli_query($this->con, $sql);
 
+                return 0;
 
             }
         } catch (\Throwable $th) {
