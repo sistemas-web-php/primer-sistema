@@ -23,7 +23,7 @@
             <input type="password" class="form-control col-6" id="exampleInputPassword1" placeholder="Ingrese su password">
         </div>
         <div class="row justify-content-center">
-            <button type="submit" class="btn btn-success col-3">ENTRAR</button>
+            <button type="submit" class="btn btn-success col-3 boton">ENTRAR</button>
         </div>
     </form>
 </div>
@@ -40,7 +40,7 @@
             <input type="password" class="form-control col-6" id="exampleInputPassword1" placeholder="Ingrese su password">
         </div>
         <div class="row justify-content-center">
-            <button type="submit" class="btn btn-success col-3">ENTRAR</button>
+            <button type="submit" class="btn btn-success col-3 boton">ENTRAR</button>
         </div>
     </form>
 </div>
