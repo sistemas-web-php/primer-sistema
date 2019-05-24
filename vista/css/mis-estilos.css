@@ -9,4 +9,8 @@ input{
 }
 .boton{
     color: black;
+    font-weight: bold;
+}
+.titulo-input-login{
+    font-weight: bold;
 }
