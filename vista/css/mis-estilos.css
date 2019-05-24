@@ -1,0 +1,9 @@
+body{
+    background: #0080ff;
+}
+input{
+    text-align: center;
+}
+.titulo-principal-login{
+    font-weight: bold;
+}
