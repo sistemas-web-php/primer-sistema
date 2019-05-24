@@ -105,6 +105,8 @@ class operador
                 $this->pass = mysqli_real_escape_string($this->con, $this->pass);
                 $this->telefono = mysqli_real_escape_string($this->con, $this->telefono);
 
+                $this->pass = password_hash($this->pass, PASSWORD_DEFAULT);
+
                 $sql = "INSERT INTO operadores 
                 (id_operador, nombre_operador, apellido_operador, email_operador, dni_operador, pass_operador, telefono_operador) 
                 VALUES (NULL, '$this->nombre', '$this->apellido', '$this->email', '$this->dni', '$this->pass', '$this->telefono')";
