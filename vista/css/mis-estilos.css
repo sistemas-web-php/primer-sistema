@@ -1,5 +1,5 @@
 body{
-    background: #0080ff;
+    background: #FFFF;
 }
 input{
     text-align: center;
@@ -8,8 +8,8 @@ input{
     font-weight: bold;
 }
 .boton{
-    color: black;
-    font-weight: bold;
+    color: ;
+    font-weight: ;
 }
 .titulo-input-login{
     font-weight: bold;
