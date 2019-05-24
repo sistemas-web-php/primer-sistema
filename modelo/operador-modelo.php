@@ -1,19 +1,23 @@
 <?php
 
+require_once(MODELO . "conexion.php");
+
 class operador
 {
 
     private $nombre;
     private $apellido;
     private $dni;
-    private $telefeno;
+    private $telefono;
     private $email;
     private $pass;
 
 
+    private $con;
 
     public function __construct(){
-        
+        $conexion = new conexion();
+        $this->con = $conexion->getCon();
     }
 
     public function getNombre(){
@@ -40,11 +44,11 @@ class operador
 		$this->dni = $dni;
 	}
 
-	public function getTelefeno(){
+	public function getTelefono(){
 		return $this->telefeno;
 	}
 
-	public function setTelefeno($telefeno){
+	public function setTelefono($telefeno){
 		$this->telefeno = $telefeno;
 	}
 
@@ -68,13 +72,10 @@ class operador
 
     public function test()
     {
-
-        if (isset($this->nombre)) {
-            echo 'existe' . $this->getNombre();
-        } else {
-            echo 'no existe';
-        }
-        
+        $sql = "SELECT * FROM operadores";
+        $resultado = mysqli_query($this->con, $sql);
+        $lista = mysqli_fetch_array($resultado);
+        echo $lista['nombre_operador'];
     }
 
     //fin funcion de testing
@@ -91,7 +92,22 @@ class operador
 
     public function nuevoOperador()
     {
-        
+        try {
+
+            if (!$this->con) {
+                throw new Exception("error al conectar a la base de datos");
+            }else{
+                $sql = "INSERT INTO operadores 
+                (id_operador, nombre_operador, apellido_operador, email_operador, dni_operador, pass_operador, telefono_operador) 
+                VALUES (NULL, '$this->nombre', '$this->apellido', '$this->email', '$this->dni', '$this->pass', '$this->telefono')";
+
+                $resultado = mysqli_query($this->con, $sql);
+
+
+            }
+        } catch (\Throwable $th) {
+            echo $th;
+        }
     }
 
     public function eliminarOperador()

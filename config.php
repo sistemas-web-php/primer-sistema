@@ -4,7 +4,7 @@
 
 define("HOST", "localhost");
 define("USER", "root");
-define("DB", "bolsa_de_trabajo");
+define("DB", "sistema_remis");
 
 //constantes de rutas
 
