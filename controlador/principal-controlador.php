@@ -1,17 +1,34 @@
 <?php
 
-include_once(VISTA . "principal-vista.php");
+if (isset($_SESSION['user'])) {
 
+    if ($_SESSION['user']['tipo-user'] == 'operador') {
 
-include_once(MODELO . "operador-modelo.php");
+        include_once(VISTA . 'principal-operador-vista.php');
 
-$ope = new operador();
+    } else if ($_SESSION['user']['tipo-user'] == 'chofer') {
 
-$ope->setNombre('tiago123');
-$ope->setApellido('tiago123');
-$ope->setDni('tiago123');
-$ope->setTelefono('123123');
-$ope->setpass('tiago123');
-$ope->setEmail('tiago123');
+        include_once(VISTA . 'principal-chofer-vista.php');
+        
+    }
+    
+}else{
 
-$ope->nuevoOperador();
+    if (isset($_GET['log'])) {
+
+        if ($_GET['log'] == 'operador') {
+            
+            include_once(MODELO . "operador-modelo.php");
+
+        } else if($_GET['log'] == 'chofer'){
+            
+            include_once(MODELO . "chofer-modelo.php");
+
+        }
+        
+    }else{
+        include_once(VISTA . "principal-vista.php");
+    }
+}
+
+?>
