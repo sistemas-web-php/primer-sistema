@@ -82,7 +82,42 @@ class operador
     
     public function loginOperador()
     {
-        
+        try {
+
+            if (!$this->con) {
+                throw new Exception("error al conectar a la base de datos");
+            }else{
+
+                $this->dni = mysqli_real_escape_string($this->con, $this->dni);
+                $this->pass = mysqli_real_escape_string($this->con, $this->pass);
+
+                $sql = "SELECT dni_operador, pass_operador 
+                        FROM operadores 
+                        WHERE dni_operador = $this->dni";
+
+                $resultado = mysqli_query($this->con, $sql);
+                
+                $row_cnt = mysqli_num_rows($resultado);
+                
+                if ($row_cnt == 1) {
+
+                    $datos = mysqli_fetch_array($resultado);
+                    $pass_verificado = password_verify($this->pass, $datos['pass']);
+                    if ($pass_verificado) {
+                        
+                    } else {
+                        return false;
+                    }
+                    
+
+                } else {
+                    return false;
+                }
+                
+            }
+        } catch (\Throwable $th) {
+            echo $th;
+        }
     }
     
     public function logoutOperador()

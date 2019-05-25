@@ -10,7 +10,7 @@
     <form class=''>
         <p class='w-100 text-center titulo-principal-login'>CHOFERES</p>
         <div class="form-group row justify-content-center">
-            <label for="exampleInputEmail1" class='col-2 titulo-input-login'>Usuario</label>
+            <label for="exampleInputEmail1" class='col-2 titulo-input-login'>DNI</label>
             <input type="text" class="form-control col-6" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su DNI">
         </div>
         <div class="form-group row justify-content-center">
@@ -20,6 +20,13 @@
         <div class="row justify-content-center">
             <button type="submit" class="btn btn-success col-3 boton">INICIAR</button>
         </div>
+        <div>
+            <?php 
+                if (isset($_GET['err']) && $_GET['err'] == 2) {
+                    echo "<p style='color: red;' class='text-center'>Los datos ingresados son incorrectos</p>";
+                }  
+            ?>
+        </div>
     </form>
 </div>
 
@@ -27,15 +34,22 @@
     <form class='mx-auto' method='POST' action='<?php echo WEB . '/?log=operador'; ?>'>
         <p class='w-100 text-center titulo-principal-login'>OPERADORES</p>
         <div class="form-group row justify-content-center">
-            <label for="exampleInputEmail1" class='col-2 titulo-input-login'>Usuario</label>
-            <input type="text" class="form-control col-6" id="email" aria-describedby="emailHelp" placeholder="Ingrese su DNI">
+            <label for="exampleInputEmail1" class='col-2 titulo-input-login'>DNI</label>
+            <input required type="text" name='dni' class="form-control col-6" id="email" aria-describedby="emailHelp" placeholder="Ingrese su DNI">
         </div>
         <div class="form-group row justify-content-center">
             <label for="exampleInputPassword1" class='col-2 titulo-input-login'>Password</label>
-            <input type="password" class="form-control col-6" id="passs" placeholder="Ingrese su password">
+            <input required type="password" name='pass' class="form-control col-6" id="passs" placeholder="Ingrese su password">
         </div>
         <div class="row justify-content-center">
             <button type="submit" class="btn btn-success col-3 boton">INICIAR</button>
+        </div>
+        <div>
+            <?php 
+                if (isset($_GET['err']) && $_GET['err'] == 1) {
+                    echo "<p style='color: red;' class='text-center'>Los datos ingresados son incorrectos</p>";
+                }  
+            ?>
         </div>
     </form>
 </div>
