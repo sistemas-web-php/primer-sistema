@@ -1,6 +1,5 @@
 <?php
 
-
 require_once($_SERVER['DOCUMENT_ROOT'] . "/primer-sistema/config.php");
 
 if(!isset($_SESSION)){

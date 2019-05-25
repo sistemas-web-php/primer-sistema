@@ -27,13 +27,23 @@ if (isset($_SESSION['user'])) {
                 $ope->setDni($_POST['dni']);
                 $ope->setPass($_POST['pass']);
 
-                $ope->loginOperador();
+                $login = $ope->loginOperador();
+
+                if(!$login){
+
+                    header("location:" . WEB . "?err=1");
                 
+                }else{
+
+                    header("location:" . WEB);
+
+                }
+
             }else{
+
                 include_once(VISTA . "principal-vista.php");
+            
             }
-            
-            
 
         } else if($_GET['log'] == 'chofer'){
             

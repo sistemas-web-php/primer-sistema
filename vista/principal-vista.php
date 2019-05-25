@@ -39,7 +39,7 @@
         </div>
         <div class="form-group row justify-content-center">
             <label for="exampleInputPassword1" class='col-2 titulo-input-login'>Password</label>
-            <input required type="password" name='pass' class="form-control col-6" id="passs" placeholder="Ingrese su password">
+            <input required type="password" name='pass' class="form-control col-6" id="pass" placeholder="Ingrese su password">
         </div>
         <div class="row justify-content-center">
             <button type="submit" class="btn btn-success col-3 boton">INICIAR</button>
@@ -48,7 +48,7 @@
             <?php 
                 if (isset($_GET['err']) && $_GET['err'] == 1) {
                     echo "<p style='color: red;' class='text-center'>Los datos ingresados son incorrectos</p>";
-                }  
+                }
             ?>
         </div>
     </form>
@@ -57,6 +57,13 @@
 
 </section>
 
+<script>
+
+function validarLogin(dni, pass) {
+    
+}
+
+</script>
 
 </body>
 <?php include_once(VISTA . "footer.php"); ?>

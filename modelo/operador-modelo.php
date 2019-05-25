@@ -102,9 +102,16 @@ class operador
                 if ($row_cnt == 1) {
 
                     $datos = mysqli_fetch_array($resultado);
-                    $pass_verificado = password_verify($this->pass, $datos['pass']);
+
+                    $pass_verificado = password_verify($this->pass, $datos['pass_operador']);
+
                     if ($pass_verificado) {
-                        
+
+                        $_SESSION['user']['dni'] = $datos['dni'];
+                        $_SESSION['user']['tipo-user'] = "operador";
+
+                        return true;
+
                     } else {
                         return false;
                     }
