@@ -7,13 +7,6 @@
 
     princiapal operador controlador
 
-<script>
-
-var x = 123;
-x += "";
-document.write(x.length);
-
-</script>
 
 </body>
 </html>
