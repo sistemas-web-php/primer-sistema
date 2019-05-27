@@ -11,6 +11,7 @@ class operador
     private $telefono;
     private $email;
     private $pass;
+    private $fecha_ingreso;
 
 
     private $con;
@@ -68,6 +69,14 @@ class operador
 		$this->pass = $pass;
     }
 
+    public function getFecha_ingreso(){
+		return $this->fecha_ingreso;
+	}
+
+	public function setFecha_ingreso($fecha_ingreso){
+		$this->fecha_ingreso = $fecha_ingreso;
+    }
+
     //comienzo funcion de testing
 
     public function test()
@@ -91,9 +100,10 @@ class operador
                 $this->dni = mysqli_real_escape_string($this->con, $this->dni);
                 $this->pass = mysqli_real_escape_string($this->con, $this->pass);
 
-                $sql = "SELECT dni_operador, pass_operador 
+                $sql = "SELECT dni_operador, pass_operador, nombre_operador 
                         FROM operadores 
-                        WHERE dni_operador = $this->dni";
+                        WHERE dni_operador = $this->dni 
+                        AND visibilidad_operador = TRUE";
 
                 $resultado = mysqli_query($this->con, $sql);
                 
@@ -109,6 +119,7 @@ class operador
 
                         $_SESSION['user']['dni'] = $datos['dni'];
                         $_SESSION['user']['tipo-user'] = "operador";
+                        $_SESSION['user']['nombre'] = $datos['nombre_operador'];
 
                         return true;
 
@@ -129,7 +140,7 @@ class operador
     
     public function logoutOperador()
     {
-        
+        unset($_SESSION['user']);
     }
 
     public function nuevoOperador()
@@ -150,8 +161,8 @@ class operador
                 $this->pass = password_hash($this->pass, PASSWORD_DEFAULT);
 
                 $sql = "INSERT INTO operadores 
-                (id_operador, nombre_operador, apellido_operador, email_operador, dni_operador, pass_operador, telefono_operador) 
-                VALUES (NULL, '$this->nombre', '$this->apellido', '$this->email', '$this->dni', '$this->pass', '$this->telefono')";
+                (id_operador, nombre_operador, apellido_operador, email_operador, dni_operador, pass_operador, telefono_operador, fecha_ingreso_operador) 
+                VALUES (NULL, '$this->nombre', '$this->apellido', '$this->email', '$this->dni', '$this->pass', '$this->telefono' '$this->fecha_ingreso')";
 
                 $resultado = mysqli_query($this->con, $sql);
 
