@@ -140,8 +140,8 @@ class operador
                 throw new Exception("error al conectar a la base de datos");
             }else{
 
-                $this->nombre = mysqli_real_escape_string($this->con, $this->nombre);
-                $this->apellido = mysqli_real_escape_string($this->con, $this->apellido);
+                $this->nombre = strtoupper(mysqli_real_escape_string($this->con, $this->nombre));
+                $this->apellido = strtoupper(mysqli_real_escape_string($this->con, $this->apellido));
                 $this->email = mysqli_real_escape_string($this->con, $this->email);
                 $this->dni = mysqli_real_escape_string($this->con, $this->dni);
                 $this->pass = mysqli_real_escape_string($this->con, $this->pass);
