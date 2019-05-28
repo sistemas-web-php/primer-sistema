@@ -5,8 +5,7 @@
 
 <body>
 
-    princiapal operador controlador
-
+    usuario <?php echo $_SESSION['user']['nombre']; ?>
 
 </body>
 </html>
