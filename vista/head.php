@@ -13,6 +13,6 @@
     <link rel="stylesheet" href="<?php echo WEB . '/vista/css/mis-estilos.css'; ?>">
 
 </head>
-<section class='container' style='margin-bottom: 100px; margin-top: 25px;'>
+<section class='container' style='margin-bottom: 25px; margin-top: 20px;'>
     <h1 class='text-center' class='titulo-principal'>SISTEMA - FANTASY</h1>
 </section>

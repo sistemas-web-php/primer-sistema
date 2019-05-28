@@ -13,3 +13,6 @@ input{
 .titulo-input-login{
     font-weight: bold;
 }
+.mapa{
+	position: absolute;
+}
