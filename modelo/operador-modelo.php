@@ -151,28 +151,40 @@ class operador
                 throw new Exception("error al conectar a la base de datos");
             }else{
 
-                $this->nombre = strtoupper(mysqli_real_escape_string($this->con, $this->nombre));
-                $this->apellido = strtoupper(mysqli_real_escape_string($this->con, $this->apellido));
-                $this->email = mysqli_real_escape_string($this->con, $this->email);
-                $this->dni = mysqli_real_escape_string($this->con, $this->dni);
-                $this->pass = mysqli_real_escape_string($this->con, $this->pass);
-                $this->telefono = mysqli_real_escape_string($this->con, $this->telefono);
+                    $sql = "SELECT dni_operador FROM operadores WHERE dni_operador = '$this->dni'";
+                    
+                    $resultado = mysqli_query($this->con, $sql);
 
-                $this->pass = password_hash($this->pass, PASSWORD_DEFAULT);
+                    $row_cnt = mysqli_num_rows($resultado);
 
-                $sql = "INSERT INTO operadores 
-                (id_operador, nombre_operador, apellido_operador, email_operador, dni_operador, pass_operador, telefono_operador, fecha_ingreso_operador) 
-                VALUES (NULL, '$this->nombre', '$this->apellido', '$this->email', '$this->dni', '$this->pass', '$this->telefono' '$this->fecha_ingreso')";
+                    if ($row_cnt == 1){
+                        echo 'el dni ya existe en la base de datos';
+                    }else{
 
-                $resultado = mysqli_query($this->con, $sql);
 
-                if ($resultado) {
-                    return true;
-                } else {
-                    throw new Exception("error al insetar el nuevo operador");
-                    return false;
+                    $this->nombre = strtoupper(mysqli_real_escape_string($this->con, $this->nombre));
+                    $this->apellido = strtoupper(mysqli_real_escape_string($this->con, $this->apellido));
+                    $this->email = mysqli_real_escape_string($this->con, $this->email);
+                    $this->dni = mysqli_real_escape_string($this->con, $this->dni);
+                    $this->pass = mysqli_real_escape_string($this->con, $this->pass);
+                    $this->telefono = mysqli_real_escape_string($this->con, $this->telefono);
+
+                    $this->pass = password_hash($this->pass, PASSWORD_DEFAULT);
+
+                    $sql = "INSERT INTO operadores 
+                    (id_operador, nombre_operador, apellido_operador, email_operador, dni_operador, pass_operador, telefono_operador, fecha_ingreso_operador) 
+                    VALUES (NULL, '$this->nombre', '$this->apellido', '$this->email', '$this->dni', '$this->pass', '$this->telefono' '$this->fecha_ingreso')";
+
+                    $resultado = mysqli_query($this->con, $sql);
+
+                    if ($resultado) {
+                        return true;
+                    } else {
+                        throw new Exception("error al insetar el nuevo operador");
+                        return false;
+                    }
+                    
                 }
-                
 
             }
         } catch (\Throwable $th) {
