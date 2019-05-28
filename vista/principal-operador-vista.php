@@ -39,7 +39,7 @@
     </li>
   </ul>
 </nav>
-<?php  $_SESSION['user']['nombre']; ?>
+<?php echo $_SESSION['user']['nombre']; ?>
 
 <div class="mapa">
 	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107134.74394283064!2d-60.76667995712585!3d-32.95204570918534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b6539335d7d75b%3A0xec4086e90258a557!2sRosario%2C+Santa+Fe!5e0!3m2!1ses-419!2sar!4v1559055042284!5m2!1ses-419!2sar" width="1350" height="550" frameborder="0" style="border:1px" allowfullscreen>	
