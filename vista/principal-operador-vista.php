@@ -17,6 +17,7 @@
   <!-- Brand -->
   <a class="navbar-brand" href="#">Logo</a>
 
+<<<<<<< HEAD
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -39,6 +40,9 @@
     </li>
   </ul>
 </nav>
+=======
+    usuario <?php echo //$_SESSION['user']['nombre']; ?>
+>>>>>>> 4f767059f7a3fe267c1be8b58694f1c60ee21000
 
     <p>princiapal operador controlador</p>
 </body>
