@@ -37,6 +37,9 @@
         <a class="dropdown-item" href="#">Operadores</a>
       </div>
     </li>
+    <li class="nav-item">
+      <a class="nav-link" href="principal-operadores-vista.php">Operadores</a>
+    </li>
   </ul>
 </nav>
 <?php echo $_SESSION['user']['nombre']; ?>
