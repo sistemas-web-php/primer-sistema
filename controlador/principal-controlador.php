@@ -64,7 +64,7 @@ if (isset($_SESSION['user'])) {
                 
                 }else{
 
-                    header("location:" . WEB . "principal-operador-vista.php");
+                    header("location:" . WEB);
 
                 }
 

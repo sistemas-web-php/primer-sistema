@@ -8,8 +8,6 @@ if(!isset($_SESSION)){
     session_regenerate_id();
 }
 
-session_destroy();
-
 // al ejecutarse siempre el index todo lo que se incluya aca se puede usar en todos lados.
 
 if (isset($_GET['view']) && isset($_SESSION['user'])) {
