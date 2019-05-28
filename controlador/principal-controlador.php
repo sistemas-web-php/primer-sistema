@@ -24,6 +24,35 @@ if (isset($_SESSION['user'])) {
 
                 $ope = new operador();
 
+                $dni = $_POST['dni'];
+                $pass = $_POST['pass'];
+
+                if ($dni != "" && $pass != "") {
+                    if (is_int($pass)) {
+
+                        $ope->setDni($dni);
+                        $ope->setPass($pass);
+
+                        $login = $ope->loginOperador();
+
+                        if(!$login){
+
+                            header("location:" . WEB . "?err=1");
+                        
+                        }else{
+
+                            header("location:" . WEB);
+
+                        }
+                    } else {
+                        header("location:" . WEB . "?err=1");
+                    }
+                    
+                } else {
+                    header("location:" . WEB . "?err=1");
+                }
+                
+
                 $ope->setDni($_POST['dni']);
                 $ope->setPass($_POST['pass']);
 
@@ -35,7 +64,7 @@ if (isset($_SESSION['user'])) {
                 
                 }else{
 
-                    header("location:" . WEB . "vista/principal-operador-vista.php");
+                    header("location:" . WEB . "principal-operador-vista.php");
 
                 }
 
