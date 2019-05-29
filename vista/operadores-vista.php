@@ -17,16 +17,18 @@ input{
         <div id="mostrar" class='row'>
 
             <form action="nuevo_operador.php" method="POST" class='col-8 offset-2 row d-flex align-items-center'>
-              <label class='col-2'>NOMBRE:</label>
-              <input type="text" id="nombre" required  name="nombre"   placeholder="NOMBRE" class="col-9 form-control">
-              <label class='col-2'>APELLIDO:</label>
-              <input type="text" id="apellido" required name="apellido" placeholder="APELLIDO" class="col-9 form-control">
-              <label class='col-2'>TELÉFONO:</label>
-              <input type="text" id="telefono" required name="telefono" placeholder="TELEFONO" class="col-9 form-control">
-              <label class='col-2'>DIRECCIÓN:</label>
-              <input type="text" id="direccion" required name="direccion"placeholder="DIRECCION" class="col-9 form-control">
+              <label class='col-2'>Nombre:</label>
+              <input type="text" id="nombre" required  name="nombre"   placeholder="Ingrese su nombre" class="col-9 form-control">
+              <label class='col-2'>Apellido:</label>
+              <input type="text" id="apellido" required name="apellido" placeholder="Ingrese su apellido" class="col-9 form-control">
+              <label class='col-2'>Teléfono:</label>
+              <input type="text" id="telefono" required name="telefono" placeholder="Ingrese su teléfono" class="col-9 form-control">
+              <label class='col-2'>Dirección:</label>
+              <input type="text" id="direccion" required name="direccion"placeholder="Ingrese su dirección" class="col-9 form-control">
               <label class='col-2'>DNI:</label>
-              <input type="text" id="dni"required name="dni" placeholder="DNI" class="col-9 form-control"><br>
+              <input type="text" id="dni"required name="dni" placeholder="ingrese su dni" class="col-9 form-control"><br>
+              <label class='col-2'>Email:</label>
+              <input type="text" id="Email"required name="Email" placeholder="Ingrese su email" class="col-9 form-control"><br>
               <center>
               <input type='submit' class="btn btn-success" id="btn" value='Registrar'>
               <button  class="btn btn-success" id="btn"onclick="ocultar();">ocultar</button>
