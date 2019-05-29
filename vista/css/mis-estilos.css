@@ -7,12 +7,25 @@ input{
 .titulo-principal-login{
     font-weight: bold;
 }
-.boton{
-    
-}
 .titulo-input-login{
     font-weight: bold;
 }
-.mapa{
-	position: absolute;
+.BOTON-SALIR {
+	font-color: #ffff;
+	float: right;
+	color: #ffff;
+}
+#mostrar, #ocultar{
+display: none;
+}
+#mostrar 
+{
+
+	padding: 8px;
+    margin:0 ; 
+}
+.titulo {
+	text-align: center;
+	font-weight: bold;
+
 }

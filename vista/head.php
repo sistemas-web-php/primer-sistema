@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="<?php echo WEB . '/vista/css/bootstrap.css'; ?>">
     <link rel="stylesheet" href="<?php echo WEB . '/vista/css/mis-estilos.css'; ?>">
 
+    <script src="<?php echo WEB . '/vista/js/bootstrap.js'; ?>"></script>
+    <script src="<?php echo WEB . '/vista/js/jquery.js'; ?>"></script>
+    
+
 </head>
-<section class='container' style='margin-bottom: 25px; margin-top: 20px;'>
-    <h1 class='text-center' class='titulo-principal'>SISTEMA - FANTASY</h1>
-</section>
