@@ -3,8 +3,10 @@
   <img src="<?php echo WEB . '/vista/iconos/auto.png'; ?>" style='width:30px; heigth:30px;' alt="">
   Remiseria
   </a>
-  
-  <div class="collapse navbar-collapse" id="navbarText">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link <?php if(isset($_GET['view']) && $_GET['view'] == 'nuevo-viaje'){echo 'active';} ?>" href="#">Nuevo viaje </a>
