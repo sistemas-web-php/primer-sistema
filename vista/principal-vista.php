@@ -2,7 +2,6 @@
 <html lang="en">
 
 <?php include_once(VISTA . "head.php"); ?>
-
 <body>
 <section id='login' class='container'>
 <div class='row mx-auto'>

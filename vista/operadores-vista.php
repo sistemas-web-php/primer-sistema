@@ -26,21 +26,26 @@ input{
               <label class='col-2'>Dirección:</label>
               <input type="text" id="direccion" required name="direccion"placeholder="Ingrese su dirección" class="col-9 form-control">
               <label class='col-2'>DNI:</label>
-              <input type="text" id="dni"required name="dni" placeholder="ingrese su dni" class="col-9 form-control"><br>
+              <input type="text" id="dni"required name="dni" placeholder="Ingrese su dni" class="col-9 form-control"><br>
               <label class='col-2'>Email:</label>
               <input type="text" id="Email"required name="Email" placeholder="Ingrese su email" class="col-9 form-control"><br>
+               <label class='col-2'>Ingreso:</label>
+              <input type="text" id="Email"required name="fecha" placeholder="Fecha de Ingreso" class="col-9 form-control"><br>
+              <label for="sel1">Activo:
+                <select class="input-large" name="activo" id="sel1">
+                  <option>SI</option>
+                  <option>NO</option>
+                </select></label><br>
               <center>
-              <input type='submit' class="btn btn-success" id="btn" value='Registrar'>
-              <button  class="btn btn-success" id="btn"onclick="ocultar();">ocultar</button>
+                <input type='submit' class="btn btn-success" value='Registrar'onclick="ocultar();">
               </center>
-  
             </form>
            
 </div>
   <table class="table">
     <thead class="thead-light">
       <tr>
-        <th scope="col">Nombre y Apellido</th>
+        <th scope="col">Nombre | Apellido</th>
         <th scope="col">Email</th>
         <th scope="col">Telefono</th>
         <th scope="col">Direccion</th>
