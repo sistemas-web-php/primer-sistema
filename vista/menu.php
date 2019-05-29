@@ -22,6 +22,6 @@
         <a class="nav-link <?php if(isset($_GET['view']) && $_GET['view'] == 'autos'){echo 'active';} ?>" href="#">Autos</a>
       </li>
     </ul>
-    <a href="">cerrar sesion</a>
+    <a href="<?php echo WEB . '?logout=true' ?>">cerrar sesion</a>
   </div>
 </nav>

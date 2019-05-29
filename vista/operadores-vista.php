@@ -2,30 +2,35 @@
 <html lang="en">
 
 <?php include_once(VISTA . "head.php"); ?>
-
+<style>
+input{
+  margin: 10px;
+}
+</style>
 <body>
 
 <?php include_once(VISTA . "menu.php"); ?>
 
-<p class="titulo">OPERADORES</p>
   <div class="right" style='margin: 30px;'>
       <button class="btn btn-success" onclick="mostrar();">Nuevo Operador</button>
     </div>
-<div id="mostrar">
+        <div id="mostrar" class='row'>
 
-            <form action="nuevo_operador.php" method="POST">
-              <label>NOMBRE:</label>
-              <input type="text" id="nombre" required  name="nombre"   placeholder="NOMBRE" class="form-control">
-              <label>APELLIDO:</label>
-              <input type="text" id="apellido" required name="apellido" placeholder="APELLIDO" class="form-control">
-              <label>TELÉFONO:</label>
-              <input type="text" id="telefono" required name="telefono" placeholder="TELEFONO" class="form-control">
-              <label>DIRECCIÓN:</label>
-              <input type="text" id="direccion" required name="direccion"placeholder="DIRECCION" class="form-control">
-              <label>DNI:</label>
-              <input type="text" id="dni"required name="dni" placeholder="DNI" class="form-control"><br>
-              <center><button  class="btn btn-success" id="btn">REGISTRAR</button>
-              <button  class="btn btn-success" id="btn"onclick="ocultar();">ocultar</button></center>
+            <form action="nuevo_operador.php" method="POST" class='col-8 offset-2 row d-flex align-items-center'>
+              <label class='col-2'>NOMBRE:</label>
+              <input type="text" id="nombre" required  name="nombre"   placeholder="NOMBRE" class="col-9 form-control">
+              <label class='col-2'>APELLIDO:</label>
+              <input type="text" id="apellido" required name="apellido" placeholder="APELLIDO" class="col-9 form-control">
+              <label class='col-2'>TELÉFONO:</label>
+              <input type="text" id="telefono" required name="telefono" placeholder="TELEFONO" class="col-9 form-control">
+              <label class='col-2'>DIRECCIÓN:</label>
+              <input type="text" id="direccion" required name="direccion"placeholder="DIRECCION" class="col-9 form-control">
+              <label class='col-2'>DNI:</label>
+              <input type="text" id="dni"required name="dni" placeholder="DNI" class="col-9 form-control"><br>
+              <center>
+              <input type='submit' class="btn btn-success" id="btn" value='Registrar'>
+              <button  class="btn btn-success" id="btn"onclick="ocultar();">ocultar</button>
+              </center>
   
             </form>
            
