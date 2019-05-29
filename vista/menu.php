@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="<?php echo WEB; ?>">
   <img src="<?php echo WEB . '/vista/iconos/auto.png'; ?>" style='width:30px; heigth:30px;' alt="">
   Remiseria
   </a>

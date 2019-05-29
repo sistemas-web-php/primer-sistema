@@ -16,7 +16,7 @@ if(isset($_GET['logout']) && $_GET['logout'] == true){
 
 // al ejecutarse siempre el index todo lo que se incluya aca se puede usar en todos lados.
 
-if (isset($_GET['view']) && isset($_SESSION['user'])) {
+if (isset($_GET['view']) && isset($_SESSION['user']) && $_GET['view'] != "") {
     include_once 'controlador/' . $_GET['view'] . '-controlador.php';
 } else {
     include_once 'controlador/principal-controlador.php';

@@ -38,14 +38,41 @@ input{
   <table class="table">
     <thead class="thead-light">
       <tr>
-        <th scope="col"></th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Apellido</th>
+        <th scope="col">Nombre y Apellido</th>
+        <th scope="col">Email</th>
         <th scope="col">Telefono</th>
         <th scope="col">Direccion</th>
-        <th scope="col">DNI</th>
+        <th scope="col">Activo</th>
+        <th scope="col">Ingreso</th>
+        <th scope="col">Dni</th>
       </tr>
     </thead>
+
+    <?php 
+      
+      for ($i=0; $i < count($array_operadores); $i++) { 
+        $nombre = ucwords($array_operadores[$i]->getNombre() . " " . $array_operadores[$i]->getApellido());
+        if ($array_operadores[$i]->getVisibilidad()) {
+          $visibilidad = 'activo';
+          $color = "bg-success";
+        } else {
+          $visibilidad = 'no activo';
+          $color = "bg-danger";
+        }
+        
+        echo 
+        "<tr>
+        <th>$nombre</th>
+        <th>" . $array_operadores[$i]->getEmail() . "</th>
+        <th>" . $array_operadores[$i]->getTelefono() . "</th>
+        <th>" . $array_operadores[$i]->getDireccion() . "</th>
+        <th class='$color'>" . $visibilidad . "</th>
+        <th>" . $array_operadores[$i]->getFecha_ingreso() . "</th>
+        <th>" . $array_operadores[$i]->getDni() . "</th>   
+        </tr>";
+      }
+
+     ?>
   </table>
 </body>
 <?php  include_once(VISTA . "footer.php"); ?>

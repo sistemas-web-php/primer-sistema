@@ -5,13 +5,16 @@ require_once(MODELO . "conexion.php");
 class operador
 {
 
+    private $id;
     private $nombre;
     private $apellido;
     private $dni;
     private $telefono;
     private $email;
     private $pass;
+    private $direccion;
     private $fecha_ingreso;
+    private $visibilidad;
 
 
     private $con;
@@ -21,12 +24,36 @@ class operador
         $this->con = $conexion->getCon();
     }
 
+    public function getDireccion(){
+		return $this->direccion;
+	}
+
+	public function setDireccion($direccion){
+		$this->direccion = $direccion;
+    }
+
     public function getNombre(){
 		return $this->nombre;
 	}
 
 	public function setNombre($nombre){
 		$this->nombre = $nombre;
+    }
+    
+    public function getId(){
+		return $this->id;
+	}
+
+	public function setId($id){
+		$this->id = $id;
+    }
+
+    public function getVisibilidad(){
+		return $this->visibilidad;
+	}
+
+	public function setVisibilidad($visibilidad){
+		$this->visibilidad = $visibilidad;
 	}
 
 	public function getApellido(){
@@ -81,10 +108,16 @@ class operador
 
     public function test()
     {
-        $sql = "SELECT * FROM operadores";
-        $resultado = mysqli_query($this->con, $sql);
-        $lista = mysqli_fetch_array($resultado);
-        echo $lista['nombre_operador'];
+        $ope = new operador();
+        $ope->setApellido('cori');
+        $ope2 = new operador();
+        $ope2->setApellido('cori2');
+
+        $array = array();
+        $array[]=$ope;
+        $array[]=$ope2;
+
+        return $array;
     }
 
     //fin funcion de testing
@@ -201,6 +234,55 @@ class operador
     public function editarOperador()
     {
         
+    }
+
+    public function getOperadores()
+    {
+        try {
+
+            if (!$this->con) {
+                throw new Exception("error al conectar a la base de datos");
+            }else{
+
+                $sql = "SELECT id_operador, nombre_operador, apellido_operador, 
+                email_operador, dni_operador, telefono_operador, fecha_ingreso_operador, 
+                visibilidad_operador, direccion_operador 
+                FROM operadores";
+
+                $resultado = mysqli_query($this->con, $sql);
+                
+                if($resultado){
+
+                    $array_operadores = array();
+
+                    while ($lista = mysqli_fetch_array($resultado)) {
+
+                        $ope = new operador();
+
+                        $ope->setId($lista['id_operador']);
+                        $ope->setNombre($lista['nombre_operador']);
+                        $ope->setApellido($lista['apellido_operador']);
+                        $ope->setDni($lista['dni_operador']);
+                        $ope->setTelefono($lista['telefono_operador']);
+                        $ope->setEmail($lista['email_operador']);
+                        $ope->setFecha_ingreso($lista['fecha_ingreso_operador']);
+                        $ope->setVisibilidad($lista['visibilidad_operador']);
+                        $ope->setDireccion($lista['direccion_operador']);
+
+                        $array_operadores[] = $ope;
+
+                    }
+
+                    return $array_operadores;
+
+                } else {
+                    throw new Exception("al realizar la consulta");
+                }
+                
+            }
+        } catch (\Throwable $th) {
+            echo $th;
+        }
     }
 
 }
