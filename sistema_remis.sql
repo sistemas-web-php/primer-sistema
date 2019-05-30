@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 28-05-2019 a las 14:37:18
+-- Tiempo de generación: 31-05-2019 a las 01:53:55
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -33,9 +33,18 @@ CREATE TABLE `autos` (
   `marca_auto` varchar(35) NOT NULL,
   `modelo_auto` varchar(35) NOT NULL,
   `patente_auto` varchar(7) NOT NULL,
-  `año_auto` int(11) NOT NULL,
+  `anio_auto` int(11) NOT NULL,
   `visibilidad_auto` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `autos`
+--
+
+INSERT INTO `autos` (`id_auto`, `marca_auto`, `modelo_auto`, `patente_auto`, `anio_auto`, `visibilidad_auto`) VALUES
+(1, 'FIAT', 'SIENA', 'HXM272', 2009, 1),
+(2, 'FIAT', 'UNO', 'CVZ576', 1999, 1),
+(5, 'JKL', 'JKL', 'fds456', 456, 1);
 
 -- --------------------------------------------------------
 
@@ -53,7 +62,8 @@ CREATE TABLE `choferes` (
   `email` varchar(100) NOT NULL,
   `fecha_ingreso_chofer` date NOT NULL,
   `visibilidad_chofer` tinyint(1) NOT NULL,
-  `id_auto` int(11) NOT NULL
+  `id_auto` int(11) NOT NULL,
+  `activo_chofer` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -71,15 +81,17 @@ CREATE TABLE `operadores` (
   `pass_operador` varchar(60) NOT NULL,
   `telefono_operador` int(11) NOT NULL,
   `fecha_ingreso_operador` date NOT NULL,
-  `visibilidad_operador` tinyint(1) NOT NULL
+  `visibilidad_operador` tinyint(1) NOT NULL,
+  `login_operador` tinyint(1) NOT NULL,
+  `direccion_operador` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `operadores`
 --
 
-INSERT INTO `operadores` (`id_operador`, `nombre_operador`, `apellido_operador`, `email_operador`, `dni_operador`, `pass_operador`, `telefono_operador`, `fecha_ingreso_operador`, `visibilidad_operador`) VALUES
-(1, 'tiago', 'cori', 'tiagoriver33@gmail.com', 38397923, '$2y$10$kypq/UDvIElaWEbcrD3YyezCbhH.MWhjpKUM6lpYq0WAKcfEc4Nl.', 5425002, '0000-00-00', 1);
+INSERT INTO `operadores` (`id_operador`, `nombre_operador`, `apellido_operador`, `email_operador`, `dni_operador`, `pass_operador`, `telefono_operador`, `fecha_ingreso_operador`, `visibilidad_operador`, `login_operador`, `direccion_operador`) VALUES
+(1, 'tiago', 'cori', 'tiagoriver33@gmail.com', 38397923, '$2y$10$kypq/UDvIElaWEbcrD3YyezCbhH.MWhjpKUM6lpYq0WAKcfEc4Nl.', 5425002, '2019-05-15', 1, 0, 'colon 2192 piso 2 dep 2');
 
 --
 -- Índices para tablas volcadas
@@ -111,7 +123,7 @@ ALTER TABLE `operadores`
 -- AUTO_INCREMENT de la tabla `autos`
 --
 ALTER TABLE `autos`
-  MODIFY `id_auto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_auto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `choferes`
@@ -123,7 +135,7 @@ ALTER TABLE `choferes`
 -- AUTO_INCREMENT de la tabla `operadores`
 --
 ALTER TABLE `operadores`
-  MODIFY `id_operador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_operador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
