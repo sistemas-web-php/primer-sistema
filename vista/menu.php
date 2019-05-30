@@ -21,7 +21,7 @@
         <a class="nav-link <?php if(isset($_GET['view']) && $_GET['view'] == 'choferes'){echo 'active';} ?>" href="#">Choferes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link <?php if(isset($_GET['view']) && $_GET['view'] == 'autos'){echo 'active';} ?>" href="#">Autos</a>
+        <a class="nav-link <?php if(isset($_GET['view']) && $_GET['view'] == 'autos'){echo 'active';} ?>" href="<?php echo WEB . '?view=autos' ?>">Autos</a>
       </li>
     </ul>
     <a href="<?php echo WEB . '?logout=true' ?>">cerrar sesion</a>
