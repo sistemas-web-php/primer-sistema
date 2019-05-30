@@ -75,26 +75,27 @@ class auto
                 throw new Exception("error al conectar a la base de datos");
             }else{
 
-                    $sql = "SELECT patente FROM autos WHERE patente = '$this->patente'";
+                  $this->patente = mysqli_real_escape_string($this->con, $this->patente);
+
+
+                    $sql = "SELECT patente_auto FROM autos WHERE patente_auto = '$this->patente'";
                     
                     $resultado = mysqli_query($this->con, $sql);
 
                     $row_cnt = mysqli_num_rows($resultado);
 
                     if ($row_cnt == 1){
-                        echo 'La patente ya existe en la base de datos';
+                        return false;
                     }else{
 
 
-                    $this->auto = strtoupper(mysqli_real_escape_string($this->con, $this->auto));
+                    $this->marca = strtoupper(mysqli_real_escape_string($this->con, $this->marca));
                     $this->modelo = strtoupper(mysqli_real_escape_string($this->con, $this->modelo));
-                    $this->patente = mysqli_real_escape_string($this->con, $this->patente);
-                    $this->movil = mysqli_real_escape_string($this->con, $this->movil);
-                    $this->ingreso = mysqli_real_escape_string($this->con, $this->fecha_ingreso);
+                    $this->año_auto = mysqli_real_escape_string($this->con, $this->año_auto);
         
                     $sql = "INSERT INTO autos 
-                    (id_auto, auto, modelo, patente, movil, fecha_ingreso_auto) 
-                    VALUES (NULL, '$this->auto', '$this->modelo', '$this->patente', '$this->movil', '$this->fecha_ingreso')";
+                    (marca_auto, modelo_auto, patente_auto, anio_auto, visibilidad_auto) 
+                    VALUES ('$this->marca', '$this->modelo', '$this->patente', '$this->año_auto', '$this->visibilidad')";
 
                     $resultado = mysqli_query($this->con, $sql);
 

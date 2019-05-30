@@ -16,19 +16,26 @@ input{
     </div>
         <div id="mostrar" class='row'>
 
-            <form action="nuevo_auto.php" method="POST" class='col-8 offset-2 row d-flex align-items-center'>
+            <form method="POST" action="<?php echo WEB . '/?view=nuevo-auto' ?>" class='col-8 offset-2 row d-flex align-items-center'>
               <label class='col-2'>Marca:</label>
-              <input type="text" required  name="Marca"   placeholder="Ingrese marca del auto" class="col-9 form-control">
+              <input type="text" required  name="marca" id="marca" placeholder="Ingrese marca del auto" class="col-9 form-control">
               <label class='col-2'>Modelo:</label>
               <input type="text"  required name="modelo" placeholder="Ingrese el modelo" class="col-9 form-control">
               <label class='col-2'>Patente:</label>
               <input type="text"  required name="patente" placeholder="Ingrese patente" class="col-9 form-control">
               <label class='col-2'>Año:</label>
-              <input type="text"  required name="movil"placeholder="N° de movil" class="col-9 form-control">
+              <input type="text"  required name="año" placeholder="Ingrese el año del modelo" class="col-9 form-control">
                
-              <center><input type='submit' class="btn btn-secondary" value='Registrar'onclick="ocultar();"></center>
+              <center><input type='submit' class="btn btn-secondary" value='Registrar'></center>
               
             </form>
+
+            <?php if ($resultado) {
+              echo "<p class='.text-success'>el auto se agrego correctamente</p>";
+            } else {
+              echo "<p class='.text-danger'>la patente ya existe en la base de datos</p>";
+            }
+             ?>
 </div>
   <table class="table">
     <thead class="thead-light">
