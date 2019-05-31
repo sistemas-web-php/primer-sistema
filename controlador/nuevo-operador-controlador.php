@@ -13,9 +13,9 @@ if(count($_POST) > 0){
     $operador->setPass($_POST['pass']);
     $operador->setTelefono($_POST['telefono']);
     $operador->setFecha_ingreso(date('Y-m-d'));
-    $operador->setVisibilidad(1);
+    $operador->setVisibilidad(TRUE);
     $operador->setDireccion($_POST['direccion']);
-    $operador->setLogin(0);
+    $operador->setLogin(FALSE);
 
     $resultado = $operador->nuevoOperador();
 

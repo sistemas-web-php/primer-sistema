@@ -64,7 +64,7 @@ input{
         }
         
         echo 
-        "<tr>
+        "<tr onclick=\"document.location='" . WEB . "/?view=editar-operador&id=". $array_operadores[$i]->getId() . "'\">
         <th>$nombre</th>
         <th>" . $array_operadores[$i]->getEmail() . "</th>
         <th>" . $array_operadores[$i]->getTelefono() . "</th>
