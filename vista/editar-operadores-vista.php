@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,9 +12,9 @@ input{
 <?php include_once(VISTA . "menu.php"); ?>
 
   <div class="right" style='margin: 30px;'>
-      <button class="btn btn-success" onclick="mostrar();">Nuevo Operador</button>
+     <p class="titulo">EDITAR - OPERADOR</p>
     </div>
-        <div id="mostrar" class='row'>
+        <div class='row'>
 
             <form action="<?php echo WEB . '/?view=nuevo-operador' ?>" method="POST" class='col-8 offset-2 row d-flex align-items-center'>
               <label class='col-2'>Nombre:</label>
@@ -34,26 +33,15 @@ input{
               <input type="password" id="pass"required name="pass" placeholder="Ingrese su password" class="col-9 form-control"><br>
 
               <center>
-                <input type='submit' class="btn btn-success" value='Registrar'>
+                <input type='submit' class="btn btn-success" value='Actualizar'>
               </center>
             </form>
            
 </div>
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">Nombre | Apellido</th>
-        <th scope="col">Email</th>
-        <th scope="col">Telefono</th>
-        <th scope="col">Direccion</th>
-        <th scope="col">Activo</th>
-        <th scope="col">Ingreso</th>
-        <th scope="col">Dni</th>
-      </tr>
-    </thead>
+  
 
     <?php 
-      
+/*
       for ($i=0; $i < count($array_operadores); $i++) { 
         $nombre = ucwords($array_operadores[$i]->getNombre() . " " . $array_operadores[$i]->getApellido());
         if ($array_operadores[$i]->getVisibilidad()) {
@@ -75,9 +63,8 @@ input{
         <th>" . $array_operadores[$i]->getDni() . "</th>   
         </tr>";
       }
-
+*/
      ?>
-  </table>
 </body>
 <?php  include_once(VISTA . "footer.php"); ?>
 </html>
