@@ -15,6 +15,7 @@ class operador
     private $direccion;
     private $fecha_ingreso;
     private $visibilidad;
+    private $login;
 
 
     private $con;
@@ -32,6 +33,15 @@ class operador
 		$this->direccion = $direccion;
     }
 
+    public function getLogin(){
+		return $this->login;
+	}
+
+	public function setLogin($login){
+		$this->login = $login;
+    }
+
+    
     public function getNombre(){
 		return $this->nombre;
 	}
@@ -73,11 +83,11 @@ class operador
 	}
 
 	public function getTelefono(){
-		return $this->telefeno;
+		return $this->telefono;
 	}
 
-	public function setTelefono($telefeno){
-		$this->telefeno = $telefeno;
+	public function setTelefono($telefono){
+		$this->telefono = $telefono;
 	}
 
 	public function getEmail(){
@@ -201,15 +211,15 @@ class operador
                     $this->dni = mysqli_real_escape_string($this->con, $this->dni);
                     $this->pass = mysqli_real_escape_string($this->con, $this->pass);
                     $this->telefono = mysqli_real_escape_string($this->con, $this->telefono);
+                    $this->fecha_ingreso = mysqli_real_escape_string($this->con, $this->fecha_ingreso);
 
                     $this->pass = password_hash($this->pass, PASSWORD_DEFAULT);
 
-                    $sql = "INSERT INTO operadores 
-                    (id_operador, nombre_operador, apellido_operador, email_operador, dni_operador, pass_operador, telefono_operador, fecha_ingreso_operador) 
-                    VALUES (NULL, '$this->nombre', '$this->apellido', '$this->email', '$this->dni', '$this->pass', '$this->telefono' '$this->fecha_ingreso')";
-
+                    $sql = "INSERT INTO `operadores` (`id_operador`, `nombre_operador`, `apellido_operador`, `email_operador`, `dni_operador`, `pass_operador`, `telefono_operador`, `fecha_ingreso_operador`, `visibilidad_operador`, `login_operador`, `direccion_operador`) 
+                    VALUES (NULL, '$this->nombre', '$this->apellido', '$this->email', '$this->dni', '$this->pass', '$this->telefono', '$this->fecha_ingreso', '$this->visibilidad', '$this->login', '$this->direccion')";
+                    
                     $resultado = mysqli_query($this->con, $sql);
-
+                    
                     if ($resultado) {
                         return true;
                     } else {

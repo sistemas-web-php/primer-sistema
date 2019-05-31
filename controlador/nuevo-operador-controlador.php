@@ -11,12 +11,14 @@ if(count($_POST) > 0){
     $operador->setEmail($_POST['email']);
     $operador->setDni($_POST['dni']);
     $operador->setPass($_POST['pass']);
-    $operador->setTelefono(TR$_POST['telefono']UE);
-    $operador->setFecha_ingreso(date('d/m/Y'));
-    $operador->setVisibilidad(TRUE);
+    $operador->setTelefono($_POST['telefono']);
+    $operador->setFecha_ingreso(date('Y-m-d'));
+    $operador->setVisibilidad(1);
     $operador->setDireccion($_POST['direccion']);
+    $operador->setLogin(0);
 
     $resultado = $operador->nuevoOperador();
+
 }
 
     $array_operadores = $operador->getOperadores();
