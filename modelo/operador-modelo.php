@@ -295,4 +295,41 @@ class operador
         }
     }
 
+    public function getOperadorXId()
+    {
+        try {
+
+            if (!$this->con) {
+                throw new Exception("error al conectar a la base de datos");
+            }else{
+
+                $sql = "SELECT nombre_operador, apellido_operador, 
+                email_operador, dni_operador, telefono_operador, fecha_ingreso_operador, 
+                visibilidad_operador, direccion_operador 
+                FROM operadores WHERE id_operador = " . $_GET['id'];
+
+                $resultado = mysqli_query($this->con, $sql);
+
+                if ($resultado) {
+                    $ope = mysqli_fetch_array($resultado);
+                    
+                    $this->nombre = $ope['nombre_operador'];
+                    $this->apellido = $ope['apellido_operador'];
+                    $this->telefono = $ope['telefono_operador'];
+                    $this->direccion = $ope['direccion_operador'];
+                    $this->dni = $ope['dni_operador'];
+                    $this->email = $ope['email_operador'];
+
+                    return true;
+
+                } else {
+                    throw new Exception("al realizar la consulta");
+
+                }
+                
+            }
+        } catch (\Throwable $th) {
+            echo $th;
+        }
+    }
 }

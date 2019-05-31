@@ -16,21 +16,19 @@ input{
     </div>
         <div class='row'>
 
-            <form action="<?php echo WEB . '/?view=nuevo-operador' ?>" method="POST" class='col-8 offset-2 row d-flex align-items-center'>
+            <form action="<?php echo WEB . '/?view=editar-operador' ?>" method="POST" class='col-8 offset-2 row d-flex align-items-center'>
               <label class='col-2'>Nombre:</label>
-              <input type="text" id="nombre" required  name="nombre"   placeholder="Ingrese su nombre" class="col-9 form-control">
+              <input type="text" id="nombre" required  name="nombre" value='<?php echo $operador->getNombre(); ?>'  placeholder="Ingrese su nombre" class="col-9 form-control">
               <label class='col-2'>Apellido:</label>
-              <input type="text" id="apellido" required name="apellido" placeholder="Ingrese su apellido" class="col-9 form-control">
+              <input type="text" id="apellido" required name="apellido" value='<?php echo $operador->getApellido(); ?>' placeholder="Ingrese su apellido" class="col-9 form-control">
               <label class='col-2'>Teléfono:</label>
-              <input type="text" id="telefono" required name="telefono" placeholder="Ingrese su teléfono" class="col-9 form-control">
+              <input type="text" id="telefono" required name="telefono" value='<?php echo $operador->getTelefono(); ?>' placeholder="Ingrese su teléfono" class="col-9 form-control">
               <label class='col-2'>Dirección:</label>
-              <input type="text" id="direccion" required name="direccion"placeholder="Ingrese su dirección" class="col-9 form-control">
+              <input type="text" id="direccion" required name="direccion" value='<?php echo $operador->getDireccion(); ?>' placeholder="Ingrese su dirección" class="col-9 form-control">
               <label class='col-2'>DNI:</label>
-              <input type="text" id="dni"required name="dni" placeholder="Ingrese su dni" class="col-9 form-control"><br>
+              <input type="text" id="dni"required name="dni" value='<?php echo $operador->getDni(); ?>' placeholder="Ingrese su dni" class="col-9 form-control"><br>
               <label class='col-2'>Email:</label>
-              <input type="text" id="email"required name="email" placeholder="Ingrese su email" class="col-9 form-control"><br>
-              <label class='col-2'>Password:</label>
-              <input type="password" id="pass"required name="pass" placeholder="Ingrese su password" class="col-9 form-control"><br>
+              <input type="text" id="email"required name="email" value='<?php echo $operador->getEmail(); ?>' placeholder="Ingrese su email" class="col-9 form-control"><br>
 
               <center>
                 <input type='submit' class="btn btn-success" value='Actualizar'>
