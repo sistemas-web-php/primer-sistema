@@ -60,10 +60,10 @@ input{
       for ($i=0; $i < count($array_operadores); $i++) { 
         $nombre = ucwords($array_operadores[$i]->getNombre() . " " . $array_operadores[$i]->getApellido());
         if ($array_operadores[$i]->getVisibilidad()) {
-          $visibilidad = 'activo';
+          $visibilidad = 'HABILITADO';
           $color = "bg-success";
         } else {
-          $visibilidad = 'no activo';
+          $visibilidad = 'DESHABILITADO';
           $color = "bg-danger";
         }
         

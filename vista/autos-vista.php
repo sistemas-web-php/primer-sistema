@@ -56,10 +56,10 @@ input{
     for ($i=0; $i < count($array_autos); $i++) { 
 
       if ($array_autos[$i]->getVisibilidad()) {
-        $visibilidad = 'activo';
+        $visibilidad = 'HABILITADO';
         $color = "bg-success";
       } else {
-        $visibilidad = 'no activo';
+        $visibilidad = 'DESHABILITADO';
         $color = "bg-danger";
       }
 
