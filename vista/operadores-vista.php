@@ -29,15 +29,11 @@ input{
               <input type="text" id="dni"required name="dni" placeholder="Ingrese su dni" class="col-9 form-control"><br>
               <label class='col-2'>Email:</label>
               <input type="text" id="Email"required name="Email" placeholder="Ingrese su email" class="col-9 form-control"><br>
-               <label class='col-2'>Ingreso:</label>
-              <input type="text" id="Email"required name="fecha" placeholder="Fecha de Ingreso" class="col-9 form-control"><br>
-              <label for="sel1">Activo:
-                <select class="input-large" name="activo" id="sel1">
-                  <option>SI</option>
-                  <option>NO</option>
-                </select></label><br>
+              <label class='col-2'>Password:</label>
+              <input type="password" id="pass"required name="pass" placeholder="Ingrese su password" class="col-9 form-control"><br>
+
               <center>
-                <input type='submit' class="btn btn-success" value='Registrar'onclick="ocultar();">
+                <input type='submit' class="btn btn-success" value='Registrar'>
               </center>
             </form>
            

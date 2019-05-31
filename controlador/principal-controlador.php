@@ -4,11 +4,11 @@ if (isset($_SESSION['user'])) {
 
     if ($_SESSION['user']['tipo-user'] == 'operador') {
 
-        include_once(VISTA . 'principal-operador-vista.php');
+        include_once(VISTA . 'operador-vista.php');
 
     } else if ($_SESSION['user']['tipo-user'] == 'chofer') {
 
-        include_once(VISTA . 'principal-chofer-vista.php');
+        include_once(VISTA . 'chofer-vista.php');
 
     }
     
