@@ -29,14 +29,15 @@ input{
               <center><input type='submit' class="btn btn-secondary" value='Registrar'></center>
               
             </form>
+</div>
 
-            <?php if ($resultado) {
-              echo "<p class='.text-success'>el auto se agrego correctamente</p>";
+<?php if (isset($resultado)) if($resultado){
+              echo "<p class='text-success text-center'>el auto se agrego correctamente</p>";
             } else {
-              echo "<p class='.text-danger'>la patente ya existe en la base de datos</p>";
+              echo "<p class='text-danger'>la patente ya existe en la base de datos</p>";
             }
              ?>
-</div>
+
   <table class="table">
     <thead class="thead-light">
       <tr>

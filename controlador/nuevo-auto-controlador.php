@@ -4,7 +4,7 @@ include_once(MODELO . "autos-modelo.php");
 
 $auto = new auto();
 
-if(isset($_POST)){
+if(count($_POST) > 0){
     $auto->setMarca($_POST['marca']);
     $auto->setModelo($_POST['modelo']);
     $auto->setPatente($_POST['patente']);
