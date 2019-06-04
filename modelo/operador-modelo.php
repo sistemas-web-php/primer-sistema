@@ -306,7 +306,7 @@ class operador
                 $sql = "SELECT nombre_operador, apellido_operador, 
                 email_operador, dni_operador, telefono_operador, fecha_ingreso_operador, 
                 visibilidad_operador, direccion_operador 
-                FROM operadores WHERE id_operador = " . $_GET['id'];
+                FROM operadores WHERE id_operador = " . $_GET['id'] . " ORDER BY visibilidad_operador";
 
                 $resultado = mysqli_query($this->con, $sql);
 
@@ -319,6 +319,7 @@ class operador
                     $this->direccion = $ope['direccion_operador'];
                     $this->dni = $ope['dni_operador'];
                     $this->email = $ope['email_operador'];
+                    $this->visibilidad = $ope['visibilidad_operador'];
 
                     return true;
 
@@ -327,6 +328,46 @@ class operador
 
                 }
                 
+            }
+        } catch (\Throwable $th) {
+            echo $th;
+        }
+    }
+
+    public function actualizarOperador()
+    {
+        try {
+
+            if (!$this->con) {
+                throw new Exception("error al conectar a la base de datos");
+            }else{
+
+                $this->nombre = strtoupper(mysqli_real_escape_string($this->con, $this->nombre));
+                $this->apellido = strtoupper(mysqli_real_escape_string($this->con, $this->apellido));
+                $this->email = mysqli_real_escape_string($this->con, $this->email);
+                $this->dni = mysqli_real_escape_string($this->con, $this->dni);
+                $this->telefono = mysqli_real_escape_string($this->con, $this->telefono);
+                $this->direccion = mysqli_real_escape_string($this->con, $this->direccion);
+
+                $sql = "UPDATE `operadores` SET 
+                `nombre_operador` = '$this->nombre', 
+                `apellido_operador` = '$this->apellido', 
+                `email_operador` = '$this->email', 
+                `dni_operador` = '$this->dni', 
+                `telefono_operador` = '$this->telefono', 
+                `visibilidad_operador` = '$this->visibilidad', 
+                `direccion_operador` = '$this->direccion' 
+                WHERE id_operador = " . $_GET['id'];
+
+                $resultado = mysqli_query($this->con, $sql);
+                
+                if ($resultado) {
+                    return TRUE;
+                } else {
+                    return FALSE;
+                }
+                
+
             }
         } catch (\Throwable $th) {
             echo $th;
