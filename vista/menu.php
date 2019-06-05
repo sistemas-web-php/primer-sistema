@@ -18,7 +18,7 @@
         <a class="nav-link <?php if(isset($_GET['view']) && $_GET['view'] == 'operadores'){echo 'active';} ?>" href="<?php echo WEB . '?view=operadores' ?>">Operadores</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link <?php if(isset($_GET['view']) && $_GET['view'] == 'choferes'){echo 'active';} ?>" href="#">Choferes</a>
+        <a class="nav-link <?php if(isset($_GET['view']) && $_GET['view'] == 'choferes'){echo 'active';} ?>"  href="<?php echo WEB . '?view=choferes' ?>">Choferes</a>
       </li>
       <li class="nav-item">
         <a class="nav-link <?php if(isset($_GET['view']) && $_GET['view'] == 'autos'){echo 'active';} ?>" href="<?php echo WEB . '?view=autos' ?>">Autos</a>

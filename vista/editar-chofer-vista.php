@@ -15,7 +15,7 @@ select{
 <?php include_once(VISTA . "menu.php"); ?>
 
   <div class="right" style='margin: 30px;'>
-     <p class="titulo">EDITAR OPERADOR</p>
+     <p class="titulo">EDITAR CHOFER</p>
     </div>
         <div class='row'>
 
