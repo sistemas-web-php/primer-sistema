@@ -28,9 +28,10 @@ input{
               <input type="text" id="direccion" required name="direccion"placeholder="Ingrese su dirección" class="col-9 form-control">
               <label class='col-2'>DNI:</label>
               <input type="text" id="dni"required name="dni" placeholder="Ingrese su dni" class="col-9 form-control"><br>
-              <label class='col-2'>Patente:</label>
-              <?php //aca va el buscador en tiempo real.. ?>
-              <input type="text" id="email"required name="patente" placeholder="Ingrese N° patente" class="col-9 form-control"><br>
+              <label class='col-2'>Email:</label>
+              <input type="text" id="email"required name="eamil" placeholder="Ingrese su email" class="col-9 form-control"><br>
+              <label class='col-2'>Auto:</label> 
+              <input type="text"  id="busquedaAuto" onkeyup='mostrarAutos();' required name="auto" placeholder="Ingrese el auto" class="col-9 form-control"><br>
               <label class='col-2'>Password:</label>
               <input type="password" id="pass"required name="pass" placeholder="Ingrese su password" class="col-9 form-control"><br>
                
@@ -84,6 +85,34 @@ input{
 */
      ?>
   </table>
+
+
+      <script>
+      
+      function mostrarAutos() {
+
+        var busqueda = document.getElementById("busquedaAuto").value; 
+
+        $.ajax({
+    // En data puedes utilizar un objeto JSON, un array o un query string
+    data: {"busqueda" : busqueda},
+    //Cambiar a type: POST si necesario
+    type: "POST",
+    // Formato de datos que se espera en la respuesta
+    dataType: "json",
+    // URL a la que se enviará la solicitud Ajax
+    url: "<?php echo WEB . '/controlador/busqueda-ajax-controlador.php'; ?>",
+    success: function (datos){
+
+      console.log( JSON.parse(datos) );
+
+    }
+});
+      }
+
+      </script>
+
+
 </body>
 <?php  include_once(VISTA . "footer.php"); ?>
 </html>

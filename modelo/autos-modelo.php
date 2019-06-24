@@ -168,4 +168,39 @@ class auto
         }
     }
 
+    public function buscarAuto($busqueda)
+    {
+        try {
+
+            if (!$this->con) {
+                throw new Exception("Error al conectar a la base de datos");
+            }else{
+
+                $busqueda = strtoupper(mysqli_real_escape_string($this->con, $busqueda));
+
+                $sql = "SELECT * FROM autos 
+                WHERE patente_auto = '$busqueda' OR marca_auto = '$busqueda' OR modelo_auto = '$busqueda'";
+
+                $resultado = mysqli_query($this->con, $sql);
+
+                if($resultado){
+
+                    while ($lista = mysqli_fetch_assoc($resultado)) {
+
+                        $data["list_autos"][] = $lista;
+
+                    }
+
+                    return $data;
+
+                } else {
+                    throw new Exception("error al realizar la consulta");
+                }
+                
+            }
+        } catch (\Throwable $th) {
+            echo $th;
+        }
+    }
+
 }
