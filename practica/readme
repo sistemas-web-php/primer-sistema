@@ -1,0 +1,32 @@
+ 
+    	return $.ajax({
+	    	url: ,
+	    	method: 'get',
+	    	dataType: 'jsonp',
+	    	success: function ( a ) {
+                var timing = $.now() - tStart;
+
+                successHandler( a, owner, service, timing );
+            },
+            error: function ( xhr, status, error ) {
+                errorHandler( xhr, status, error, owner, service, url );
+            }
+	    });
+
+                https://flexbox.help/
+                https://www.cssmatic.com/es/box-shadow
+    
+
+    display: block;
+    height: 73px;
+    /* background-color: #c1c1c1; */
+    width: 71px;
+    margin: auto;
+    background-image: url(https://donweb.com/img/pagina-web-google/sp-pagina-web-difm.png);
+    background-size: auto;
+    background-position: -3px -66px;
+
+
+for(var i in temp1.jsonMC){
+	console.log(temp1.jsonMC[i])
+}
